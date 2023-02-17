@@ -1,3 +1,9 @@
+:root {
+    --color-1: #202020;
+    --color-2: #333333;
+    --color-3: #E6B904;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,9 +11,15 @@
 }
 
 body {
-    min-height: 100vh;
+    background-color: var(--color-1);
     max-width: 720px;
+    min-width: 720px;
+    min-height: 100vh;
     font-family: 'Trebuchet MS', sans-serif;
     color: #fff;
     margin: 0 auto;
+}
+
+ul {
+    list-style: none;
 }
