@@ -1,11 +1,12 @@
 import "./app.css";
-import Notes from "./components/Notes"
+import Notes from "./components/notes/Notes";
+import TodoList from "./components/todoList/TodoList";
 
 const App = () => {
   return (
-    <div>
+    <>
       <Notes />
-    </div>
+    </>
   );
 };
 
