@@ -31,7 +31,7 @@
 .notes-list-item-text {
     word-wrap: break-word;
     max-height: calc(19px*4);
-    overflow-block: hidden;
+    overflow: hidden;
 }
 
 
