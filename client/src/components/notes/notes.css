@@ -1,4 +1,5 @@
 .notes {
+    background-color: var(--color-1);
     max-height: 100vh;
     margin: 0 auto;
 
@@ -14,6 +15,26 @@
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
+}
+
+.notes-list-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-list-header>h2 {
+    margin: 4px;
+    padding: 4px;
+}
+
+.notes-list-input {
+    background-color: var(--color-2);
+    color: #fff;
+
+    margin: 4px 10px;
+    border: none;
+    border-radius: 2px;
+    padding: 8px 4px 8px 12px;
 }
 
 .notes-list-container {
@@ -34,8 +55,8 @@
     overflow: hidden;
 }
 
-
 .note {
+    width: 100%;
     overflow: auto;
 }
 
