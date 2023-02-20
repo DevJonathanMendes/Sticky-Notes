@@ -24,8 +24,7 @@ const Notes = () => {
             <div className="notes-list">
                 <header className="notes-list-header">
                     <h2>Sticky Notes</h2>
-                    <input className="notes-list-input" type="search" placeholder="Research..." />
-                    <button onClick={() => { }}>ADD</button>
+                    <input className="notes-list-header-input" type="search" placeholder="Research..." />
                 </header>
 
                 <div className="notes-list-container">
