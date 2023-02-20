@@ -17,7 +17,7 @@ const stickyNotesMock = [{
 
 const Notes = () => {
     const [notes, setNotes] = useState(stickyNotesMock);
-    const [noteSelected, setNoteSelected] = useState("");
+    const [noteSelected, setNoteSelected] = useState("a0");
 
     return (
         <div className="notes">
@@ -36,8 +36,9 @@ const Notes = () => {
                 </div>
             </div>
             <div className="note">{
-                notes.map(({ id, text }) =>
-                    id === noteSelected && <p className="note-text">{text}</p>)
+                notes.map(({ id, text }) => id === noteSelected
+                    ? <div className="note-text"><textarea>{text}</textarea></div>
+                    : null)
             }</div>
         </div >
     );

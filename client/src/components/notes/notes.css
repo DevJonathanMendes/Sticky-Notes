@@ -62,10 +62,18 @@
 
 .note-text {
     display: flex;
-    height: fit-content;
     background-color: var(--color-2);
-    border-top: 20px solid var(--color-3);
+    max-width: fit-content;
+    max-height: 100%;
+
     margin: 10px;
-    padding: 15px 10px;
+    border-top: 20px solid var(--color-3);
     border-radius: 4px;
+    padding: 15px 10px;
+}
+
+.note-text>textarea {
+    min-width: calc(inherit);
+    background-color: var(--color-2);
+    color: #fff;
 }
