@@ -32,13 +32,19 @@ const NotesHeader = () => {
     );
 };
 
+const NotesListItem = () => {
+    return (
+        <li className="notes-list-item">
+            <p className="notes-list-item-text">Note</p>
+        </li>
+    );
+};
+
 const NotesList = () => {
     return (
         <div className="notes-list-container">
             <ul>
-                <li className="notes-list-item">
-                    <p className="notes-list-item-text">Note</p>
-                </li>
+                <NotesListItem />
             </ul>
         </div>
     );
