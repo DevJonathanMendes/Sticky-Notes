@@ -32,6 +32,18 @@ const NotesHeader = () => {
     );
 };
 
+const NotesList = () => {
+    return (
+        <div className="notes-list-container">
+            <ul>
+                <li className="notes-list-item">
+                    <p className="notes-list-item-text">Note</p>
+                </li>
+            </ul>
+        </div>
+    );
+};
+
 const Notes = () => {
     const [notes, setNotes] = useState(stickyNotesMock);
 
@@ -39,14 +51,7 @@ const Notes = () => {
         <div className="notes">
             <div className="notes-list">
                 <NotesHeader />
-                <div className="notes-list-container">
-                    <ul>{
-                        notes.map(({ id, text }) =>
-                            <li key={id} className="notes-list-item">
-                                <p className="notes-list-item-text">{text}</p>
-                            </li>)
-                    }</ul>
-                </div>
+                <NotesList />
             </div>
             <div className="note">
                 <div className="note-text">
