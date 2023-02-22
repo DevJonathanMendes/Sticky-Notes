@@ -44,6 +44,16 @@ const NotesList = () => {
     );
 };
 
+const NoteSelected = () => {
+    return (
+        <div className="note">
+            <div className="note-text">
+                <textarea defaultValue="A selected note." />
+            </div>
+        </div>
+    );
+};
+
 const Notes = () => {
     const [notes, setNotes] = useState(stickyNotesMock);
 
@@ -53,11 +63,7 @@ const Notes = () => {
                 <NotesHeader />
                 <NotesList />
             </div>
-            <div className="note">
-                <div className="note-text">
-                    <textarea defaultValue="A selected note." />
-                </div>
-            </div>
+            <NoteSelected />
         </div >
     );
 };
