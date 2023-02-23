@@ -1,7 +1,13 @@
 import { useState } from "react";
 import "./notes.css";
 
-const stickyNotesMock = [{
+interface INote extends Object {
+    id: string,
+    text: string,
+    selected: true | false
+};
+
+const stickyNotesMock: INote[] = [{
     id: "a0",
     text: "Sticky Note 0",
     selected: false
@@ -32,44 +38,65 @@ const NotesHeader = () => {
     );
 };
 
-const NotesListItem = () => {
-    return (
-        <li className="notes-list-item">
-            <p className="notes-list-item-text">Note</p>
-        </li>
-    );
-};
+const NotesList = (props: { notes: INote[], onClick: (id: string) => void }): JSX.Element => {
+    const { notes, onClick } = props;
 
-const NotesList = () => {
+    const handleClick = (id: string) => onClick(id);
+
     return (
         <div className="notes-list-container">
-            <ul>
-                <NotesListItem />
-            </ul>
+            <ul>{notes.map(({ id, text }) =>
+                <li key={id} className="notes-list-item" onClick={() => handleClick(id)}>
+                    <p className="notes-list-item-text">{text}</p>
+                </li>)
+            }</ul>
         </div>
     );
 };
 
-const NoteSelected = () => {
+const NoteSelected = (props: { notes: INote[] }) => {
+    const { notes } = props;
+    const note = notes.filter(note => note.selected)[0];
+
     return (
-        <div className="note">
-            <div className="note-text">
-                <textarea defaultValue="A selected note." />
-            </div>
-        </div>
+        <div className="note">{note ?
+            <div key={note.id} className="note-text">
+                <textarea value={note.text}/>
+            </div> : null
+        }</div>
     );
 };
 
 const Notes = () => {
     const [notes, setNotes] = useState(stickyNotesMock);
 
+    const SelectNote = (id: string) => {
+        setNotes(notes => notes.map(note => {
+            note.id === id
+                ? note.selected = true
+                : note.selected = false;
+
+            return note;
+        }));
+    };
+
+    const updateNote = (id: string, text: string) => {
+        setNotes(notes => notes.map(note => {
+            note.id === id
+                ? note.text = text
+                : null;
+
+            return note;
+        }));
+    };
+
     return (
         <div className="notes">
             <div className="notes-list">
                 <NotesHeader />
-                <NotesList />
+                <NotesList notes={notes} onClick={SelectNote} />
             </div>
-            <NoteSelected />
+            <NoteSelected notes={notes} onChange={updateNote} />
         </div >
     );
 };
