@@ -54,17 +54,18 @@ const NotesList = (props: { notes: INote[], onClick: (id: string) => void }): JS
     );
 };
 
-const NoteSelected = (props: { notes: INote[] }) => {
-    const { notes } = props;
-    const note = notes.filter(note => note.selected)[0];
+const NoteSelected = (props: { notes: INote[], onChange: (id: string, text: string) => void }) => {
+    const note = props.notes.filter(note => note.selected)[0];
 
-    return (
-        <div className="note">{note ?
-            <div key={note.id} className="note-text">
-                <textarea value={note.text}/>
-            </div> : null
-        }</div>
-    );
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
+        props.onChange(note.id, e.target.value);
+
+    return note ?
+        <div key={note.id} className="note">
+            <div className="note-text">
+                <textarea onChange={handleChange} value={note.text} />
+            </div>
+        </div> : null;
 };
 
 const Notes = () => {
@@ -80,14 +81,9 @@ const Notes = () => {
         }));
     };
 
-    const updateNote = (id: string, text: string) => {
-        setNotes(notes => notes.map(note => {
-            note.id === id
-                ? note.text = text
-                : null;
-
-            return note;
-        }));
+    const updateNote = (id: string, text: string): void => {
+        const upNote = { id, text, selected: true };
+        setNotes([upNote, ...notes.filter(note => note.id !== id)]);
     };
 
     return (
