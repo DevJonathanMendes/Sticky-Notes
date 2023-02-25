@@ -1,4 +1,4 @@
-const NoteHeader = () => {
+const NoteHeader = (props) => {
     return (
         <header className="notes-list-header">
             <h2>Sticky Notes</h2>
@@ -7,7 +7,7 @@ const NoteHeader = () => {
                 className="notes-list-header-input"
                 placeholder="Research..."
             />
-            <div><span>YELLOW</span></div>
+            <div><button onClick={() => props.createNote()}>YELLOW</button></div>
         </header>
     );
 };

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import randomId from "../../utils/randomId";
 import NoteHeader from "./NoteHeader";
 import NoteList from "./NoteList";
 import NoteSelected from "./NoteSelected";
@@ -31,7 +32,17 @@ const stickyNotesMock: INote[] = [{
 const Notes = () => {
     const [notes, setNotes] = useState(stickyNotesMock);
 
-    const selectNote = (id) => {
+    const createNote = () => {
+        const newNote = {
+            id: randomId(), 
+            text: "",
+            selected: true
+        };
+
+        setNotes([newNote, ...notes]);
+    };
+
+    const readNote = (id) => {
         setNotes(notes => notes.map(note => {
             note.id === id
                 ? note.selected = true
@@ -53,10 +64,10 @@ const Notes = () => {
     return (
         <div className="notes">
             <div className="notes-list">
-                <NoteHeader />
-                <NoteList notes={notes} deleteNote={deleteNote} selectNote={selectNote} />
+                <NoteHeader createNote={createNote} />
+                <NoteList notes={notes} deleteNote={deleteNote} readNote={readNote} />
             </div>
-            <NoteSelected notes={notes} onChange={updateNote} />
+            <NoteSelected notes={notes} updateNote={updateNote} />
         </div >
     );
 };
