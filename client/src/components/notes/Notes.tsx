@@ -1,4 +1,6 @@
 import { useState } from "react";
+import NoteList from "./NoteList";
+import NoteSelected from "./NoteSelected";
 import "./notes.css";
 
 interface INote extends Object {
@@ -64,7 +66,7 @@ const Notes = () => {
         <div className="notes">
             <div className="notes-list">
                 <NotesHeader />
-                <NotesList notes={notes} deleteNote={deleteNote} selectNote={selectNote} />
+                <NoteList notes={notes} deleteNote={deleteNote} selectNote={selectNote} />
             </div>
             <NoteSelected notes={notes} onChange={updateNote} />
         </div >
