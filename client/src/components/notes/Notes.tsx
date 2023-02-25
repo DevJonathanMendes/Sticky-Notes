@@ -27,19 +27,6 @@ const stickyNotesMock: INote[] = [{
     selected: false
 }];
 
-const NotesHeader = () => {
-    return (
-        <header className="notes-list-header">
-            <h2>Sticky Notes</h2>
-            <input
-                type="search"
-                className="notes-list-header-input"
-                placeholder="Research..."
-            />
-        </header>
-    );
-};
-
 const Notes = () => {
     const [notes, setNotes] = useState(stickyNotesMock);
 
