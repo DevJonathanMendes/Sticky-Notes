@@ -1,4 +1,4 @@
-const NotesList = (props) => {
+const NoteList = (props) => {
     const { notes, selectNote, deleteNote } = props;
 
     return (
@@ -13,4 +13,4 @@ const NotesList = (props) => {
     );
 };
 
-export default NotesList;
+export default NoteList;
