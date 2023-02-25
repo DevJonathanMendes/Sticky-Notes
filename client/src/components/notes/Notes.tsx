@@ -38,40 +38,10 @@ const NotesHeader = () => {
     );
 };
 
-const NotesList = (props: { notes: INote[], onClick: (id: string) => void }): JSX.Element => {
-    const { notes, onClick } = props;
-
-    const handleClick = (id: string) => onClick(id);
-
-    return (
-        <div className="notes-list-container">
-            <ul>{notes.map(({ id, text }) =>
-                <li key={id} className="notes-list-item" onClick={() => handleClick(id)}>
-                    <p className="notes-list-item-text">{text}</p>
-                </li>)
-            }</ul>
-        </div>
-    );
-};
-
-const NoteSelected = (props: { notes: INote[], onChange: (id: string, text: string) => void }) => {
-    const note = props.notes.filter(note => note.selected)[0];
-
-    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
-        props.onChange(note.id, e.target.value);
-
-    return note ?
-        <div key={note.id} className="note">
-            <div className="note-text">
-                <textarea onChange={handleChange} value={note.text} />
-            </div>
-        </div> : null;
-};
-
 const Notes = () => {
     const [notes, setNotes] = useState(stickyNotesMock);
 
-    const SelectNote = (id: string) => {
+    const selectNote = (id) => {
         setNotes(notes => notes.map(note => {
             note.id === id
                 ? note.selected = true
@@ -81,16 +51,20 @@ const Notes = () => {
         }));
     };
 
-    const updateNote = (id: string, text: string): void => {
+    const updateNote = (id, text) => {
         const upNote = { id, text, selected: true };
         setNotes([upNote, ...notes.filter(note => note.id !== id)]);
+    };
+
+    const deleteNote = (id) => {
+        setNotes(notes => notes.filter(note => note.id !== id));
     };
 
     return (
         <div className="notes">
             <div className="notes-list">
                 <NotesHeader />
-                <NotesList notes={notes} onClick={SelectNote} />
+                <NotesList notes={notes} deleteNote={deleteNote} selectNote={selectNote} />
             </div>
             <NoteSelected notes={notes} onChange={updateNote} />
         </div >
