@@ -1,4 +1,5 @@
 import { useState } from "react";
+import NoteHeader from "./NoteHeader";
 import NoteList from "./NoteList";
 import NoteSelected from "./NoteSelected";
 import "./notes.css";
@@ -52,7 +53,7 @@ const Notes = () => {
     return (
         <div className="notes">
             <div className="notes-list">
-                <NotesHeader />
+                <NoteHeader />
                 <NoteList notes={notes} deleteNote={deleteNote} selectNote={selectNote} />
             </div>
             <NoteSelected notes={notes} onChange={updateNote} />
