@@ -46,9 +46,11 @@ const Notes = () => {
         };
 
         setNotes([newNote, ...notes]);
+        readNote(newNote.id);
     };
 
-    const readNote = (id) => {
+    const readNote = (id: string) => {
+        deleteNoteNull();
         setNotes(notes => notes.map(note => {
             note.id === id
                 ? note.selected = true
@@ -58,14 +60,25 @@ const Notes = () => {
         }));
     };
 
-    const updateNote = (id, text) => {
-        const upNote = notes.filter(note => note.id === id)[0];
-        upNote.text = text;
-        setNotes([upNote, ...notes.filter(note => note.id !== id)]);
+    const updateNote = (id: string, text: string) => {
+        if (text.length < 256) {
+            setNotes(notes => notes.map(note => {
+                if (note.id === id)
+                    note.text = text;
+
+                return note;
+            }));
+        };
     };
 
-    const deleteNote = (id) => {
+    const deleteNote = (id: string) => {
         setNotes(notes => notes.filter(note => note.id !== id));
+    };
+
+    const deleteNoteNull = () => {
+        setNotes(notes => notes.filter(({ text, selected }) =>
+            text.trim().length > 0 || selected
+        ));
     };
 
     return (
