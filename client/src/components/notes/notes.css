@@ -18,6 +18,8 @@
     flex-direction: column;
 }
 
+/* NoteHeader */
+
 .notes-list-header {
     display: flex;
     flex-direction: column;
@@ -36,6 +38,20 @@
     border: none;
     border-radius: 2px;
     padding: 8px 4px 8px 12px;
+}
+
+.icons-color {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icon-color {
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+
+    border: 1px solid !important;
 }
 
 /* NotesList */
@@ -91,8 +107,9 @@
     font-size: 16px;
     min-width: 100%;
     max-width: 100%;
-    min-height: 180px;
-    max-height: 180px;
+    min-height: 360px;
+    max-height: 90vh;
+
     background-color: var(--color-2);
     color: #fff;
 }
