@@ -2,7 +2,21 @@
     --color-0: #000;
     --color-1: #202020;
     --color-2: #333333;
-    --color-3: #E6B904;
+    --color-yellow: #FFCB47;
+    --color-red: #A4031F;
+    --color-green: #34623F;
+}
+
+.yellow {
+    border-top-color: var(--color-yellow) !important;
+}
+
+.red {
+    border-top-color: var(--color-red) !important;
+}
+
+.green {
+    border-top-color: var(--color-green) !important;
 }
 
 * {
