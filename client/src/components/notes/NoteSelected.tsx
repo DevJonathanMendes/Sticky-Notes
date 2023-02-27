@@ -6,7 +6,7 @@ const NoteSelected = (props) => {
 
     return note ?
         <div key={note.id} className="note">
-            <div className="note-text">
+            <div className={`note-text  ${note.color}`}>
                 <textarea onChange={handleChange} placeholder="Write a note..." value={note.text} />
             </div>
         </div> : null;
