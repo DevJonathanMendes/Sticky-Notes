@@ -1,34 +1,31 @@
 import { useState } from "react";
 import TodoForm from "./TodoForm";
+import { IPropsTodos, ITodo } from "./interfaceTodos";
+
 import "./todolist.css";
 
-const Todo = (props) => {
-    const [edit, setEdit] = useState({
-        id: null,
-        text: ""
-    });
+const emptyTodo = { id: "", text: "" };
 
-    const submitUpdate = value => {
-        props.edit(edit.id, value);
+const Todo = (props: IPropsTodos) => {
+    const [upTodo, setUpTodo] = useState<ITodo>(emptyTodo);
+    const { todos, updateTodo, deleteTodo } = props;
 
-        setEdit({
-            id: null,
-            text: ""
-        });
+    const submitUpdate = (todo: ITodo) => {
+        updateTodo(todo);
+        setUpTodo(emptyTodo);
     };
 
-    if (edit.id)
-        return <TodoForm edit={edit} onSubmit={submitUpdate} />;
-
-    return (<ul>{props.todos.map(({ id, text }) =>
-        <li className="task" key={id}>
-            <div className="task-text">{text}</div>
-            <div className="task-icons">
-                <span className="task-icon" onClick={() => setEdit({ id, text })}>E</span>
-                <span className="task-icon" onClick={() => props.remove(id)}>D</span>
-            </div>
-        </li>
-    )}</ul>);
+    return upTodo.id
+        ? <TodoForm upTodo={upTodo} onSubmit={submitUpdate} />
+        : <ul>{todos.map(({ id, text }) =>
+            <li className="task" key={id}>
+                <div className="task-text">{text}</div>
+                <div className="task-icons">
+                    <span className="task-icon" onClick={() => setUpTodo({ id, text })}>E</span>
+                    <span className="task-icon" onClick={() => deleteTodo(id)}>D</span>
+                </div>
+            </li>)
+        }</ul>
 };
 
 export default Todo;

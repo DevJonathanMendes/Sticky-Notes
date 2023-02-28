@@ -1,25 +1,26 @@
 import { useState } from 'react';
+import { ITodo } from './interfaceTodos';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
 
-function TodoList() {
-    const [todos, setTodos] = useState([]);
+const TodoList = () => {
+    const [todos, setTodos] = useState<ITodo[]>([]);
 
-    const addTodo = todo =>
+    const createTodo = (todo: ITodo) =>
         setTodos([todo, ...todos]);
 
-    const remove = (todoId: string) =>
+    const updateTodo = (upTodo: ITodo) =>
+        setTodos(todos.map(todo => todo.id === upTodo.id ? upTodo : todo));
+
+    const deleteTodo = (todoId: string) =>
         setTodos(todos.filter(({ id }) => id !== todoId));
 
-    const edit = (id, text) =>
-        setTodos(todos => todos.map(todo => (todo.id === id ? text : todo)));
-
     return (<>
-        <TodoForm onSubmit={addTodo} />
+        <TodoForm onSubmit={createTodo} />
         <Todo
             todos={todos}
-            remove={remove}
-            edit={edit} />
+            deleteTodo={deleteTodo}
+            updateTodo={updateTodo} />
     </>);
 };
 
