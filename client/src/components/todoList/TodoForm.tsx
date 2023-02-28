@@ -1,4 +1,5 @@
 import { useState } from "react";
+import randomId from "../../utils/randomId";
 
 const TodoForm = (props) => {
     const [inputTextValue, setInputTextValue] = useState(props.edit ? props.edit.text : "");
@@ -10,7 +11,7 @@ const TodoForm = (props) => {
         e.preventDefault();
 
         props.onSubmit({
-            id: "",
+            id: randomId(),
             text: inputTextValue
         });
 
