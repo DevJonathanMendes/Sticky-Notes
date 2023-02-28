@@ -13,9 +13,6 @@
 .tasks {
     background-color: var(--color-1);
     flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
 }
 
 .task {

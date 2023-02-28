@@ -1,9 +1,5 @@
 import { useState } from "react";
 
-const { round, random } = Math;
-const randomId = () =>
-    round(Date.now() * random()).toString(36);
-
 const TodoForm = (props) => {
     const [inputTextValue, setInputTextValue] = useState(props.edit ? props.edit.text : "");
 
@@ -14,7 +10,7 @@ const TodoForm = (props) => {
         e.preventDefault();
 
         props.onSubmit({
-            id: randomId(),
+            id: "",
             text: inputTextValue
         });
 
