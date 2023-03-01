@@ -1,8 +1,7 @@
-.tasks,
 .task,
 .task-text,
-.task-icons,
-.task-icon {
+.icons,
+.icon {
     display: flex;
     flex-direction: row;
 
@@ -25,11 +24,9 @@
     padding: 5px;
 }
 
-.task-icon {
-    min-width: 24px;
-    min-height: 24px;
-    max-width: 24px;
-    max-height: 24px;
+.icon {
+    width: 24px;
+    height: 24px;
 
     margin: 2px;
     padding: 2px;
