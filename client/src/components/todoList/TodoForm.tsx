@@ -1,17 +1,22 @@
 import { useState } from "react";
 import randomId from "../../utils/randomId";
+import { IPropsTodoForm } from "./interfaceTodos";
 
-const TodoForm = (props) => {
-    const [inputTextValue, setInputTextValue] = useState(props.edit ? props.edit.text : "");
+const TodoForm = (props: IPropsTodoForm) => {
+    const [inputTextValue, setInputTextValue] = useState(props.upTodo ? props.upTodo.text : "");
 
-    const handleChange = e =>
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
         setInputTextValue(e.target.value);
 
-    const handleSubmit = e => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+        const id = props.upTodo
+            ? props.upTodo.id
+            : false;
+
         props.onSubmit({
-            id: randomId(),
+            id: id || randomId(),
             text: inputTextValue
         });
 
@@ -20,7 +25,7 @@ const TodoForm = (props) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            {props.edit ? <>
+            {props.upTodo ? <>
                 <input type="text" onChange={handleChange} value={inputTextValue} />
                 <input type="submit" value="Update" />
             </> : <>

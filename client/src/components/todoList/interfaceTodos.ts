@@ -10,4 +10,9 @@ interface IPropsTodos {
     deleteTodo: (todoId: string) => void
 };
 
-export type { ITodo, IPropsTodos };
+interface IPropsTodoForm {
+    upTodo?: ITodo,
+    onSubmit: (upTodo: ITodo) => void
+};
+
+export type { ITodo, IPropsTodos, IPropsTodoForm };
