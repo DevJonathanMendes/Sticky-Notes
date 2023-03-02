@@ -38,6 +38,10 @@ body {
     margin: 0 auto;
 }
 
+h1 {
+    margin: 8px 4px;
+}
+
 ul {
     list-style: none;
 }
