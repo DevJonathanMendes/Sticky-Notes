@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { ITodo } from './interfaceTodos';
 import TodoForm from './TodoForm/TodoForm';
-import Todo from './TodoList/TodoList';
+import TodoList from './TodoList/TodoList';
 
 import './Todo.css';
 
-const TodoList = () => {
+const Todo = () => {
     const [todos, setTodos] = useState<ITodo[]>([]);
 
     const createTodo = (todo: ITodo) => {
@@ -24,7 +24,7 @@ const TodoList = () => {
         <div className='todo'>
             <h1>To-Do List</h1>
             <TodoForm onSubmit={createTodo} />
-            <Todo
+            <TodoList
                 todos={todos}
                 deleteTodo={deleteTodo}
                 updateTodo={updateTodo}
@@ -33,4 +33,4 @@ const TodoList = () => {
     );
 };
 
-export default TodoList;
+export default Todo;
