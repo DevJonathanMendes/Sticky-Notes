@@ -1,31 +1,36 @@
-import { useState } from "react";
-import TodoForm from "./TodoForm";
-import { IPropsTodos, ITodo } from "./interfaceTodos";
+import { useState } from 'react';
+import { ITodo } from './interfaceTodos';
+import TodoForm from './TodoForm/TodoForm';
+import Todo from './TodoList/TodoList';
 
-import "./todolist.css";
+import './Todo.css';
 
-const emptyTodo = { id: "", text: "" };
+const TodoList = () => {
+    const [todos, setTodos] = useState<ITodo[]>([]);
 
-const Todo = (props: IPropsTodos) => {
-    const [upTodo, setUpTodo] = useState<ITodo>(emptyTodo);
-    const { todos, updateTodo, deleteTodo } = props;
+    const createTodo = (todo: ITodo) => {
+        if (!todo.text) return;
 
-    const submitUpdateTodo = ({ id, text }: ITodo) => {
-        updateTodo({ id, text });
-        setUpTodo(emptyTodo);
+        setTodos([todo, ...todos]);
     };
 
-    return upTodo.id
-        ? <TodoForm upTodo={upTodo} onSubmit={submitUpdateTodo} />
-        : <ul>{todos.map(({ id, text }) =>
-            <li className="task" key={id}>
-                <div className="task-text">{text}</div>
-                <div className="icons">
-                    <span className="icon" onClick={() => setUpTodo({ id, text })}>E</span>
-                    <span className="icon" onClick={() => deleteTodo(id)}>D</span>
-                </div>
-            </li>
-        )}</ul>
+    const updateTodo = (upTodo: ITodo) =>
+        setTodos(todos.map(todo => todo.id === upTodo.id ? upTodo : todo));
+
+    const deleteTodo = (todoId: string) =>
+        setTodos(todos.filter(({ id }) => id !== todoId));
+
+    return (
+        <div className='todo'>
+            <h1>To-Do List</h1>
+            <TodoForm onSubmit={createTodo} />
+            <Todo
+                todos={todos}
+                deleteTodo={deleteTodo}
+                updateTodo={updateTodo}
+            />
+        </div>
+    );
 };
 
-export default Todo;
+export default TodoList;
