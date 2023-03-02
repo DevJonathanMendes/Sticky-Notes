@@ -1,6 +1,7 @@
 interface ITodo {
     id: string,
     text: string,
+    complete: true | false
 };
 
 interface IPropsTodos {
