@@ -1,6 +1,7 @@
+import { IPropsNoteSelected } from "../../../interfaces/interfaceNotes";
 import "./NotesSelected.css";
 
-const NoteSelected = (props) => {
+const NoteSelected = (props: IPropsNoteSelected) => {
     const note = props.notes.filter(note => note.selected)[0];
 
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>

@@ -20,4 +20,9 @@ interface IPropsNoteList {
     deleteNote: (id: string) => void
 }
 
-export type { INote, IPropsNoteHeader, IPropsNoteList };
+interface IPropsNoteSelected {
+    notes: INote[],
+    updateNote: (id: string, text: string) => void
+}
+
+export type { INote, IPropsNoteHeader, IPropsNoteList, IPropsNoteSelected };
