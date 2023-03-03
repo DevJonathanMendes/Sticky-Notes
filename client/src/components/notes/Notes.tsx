@@ -1,45 +1,13 @@
 import { useState } from "react";
+import { INote } from "../../interfaces/interfaceNotes";
 import randomId from "../../utils/randomId";
 import NoteHeader from "./NotesHeader/NotesHeader";
 import NoteSelected from "./NotesSelected/NotesSelected";
+
 import "./Notes.css";
 
-interface INote extends Object {
-    id: string,
-    color: string,
-    text: string,
-    selected: true | false,
-    search: true | false
-};
-
-const stickyNotesMock: INote[] = [{
-    id: "a0",
-    color: "yellow",
-    text: "Sticky Note 0",
-    selected: false,
-    search: true
-}, {
-    id: "a1",
-    color: "red",
-    text: "Sticky Note 1",
-    selected: false,
-    search: true
-}, {
-    id: "a3",
-    color: "green",
-    text: "Sticky Note 2",
-    selected: false,
-    search: true
-}, {
-    id: "a4",
-    color: "yellow",
-    text: "Sticky Note 3",
-    selected: false,
-    search: true
-}];
-
 const Notes = () => {
-    const [notes, setNotes] = useState(stickyNotesMock);
+    const [notes, setNotes] = useState<INote[]>([]);
 
     const searchNote = (searchText: string) => {
         setNotes(notes => notes.map(note => {

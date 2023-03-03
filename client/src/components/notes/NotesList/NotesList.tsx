@@ -1,6 +1,8 @@
+import { IPropsNoteList } from "../../../interfaces/interfaceNotes";
+
 import "./NotesList.css";
 
-const NoteList = (props) => {
+const NoteList = (props: IPropsNoteList) => {
     const { notes, readNote, deleteNote } = props;
 
     return (

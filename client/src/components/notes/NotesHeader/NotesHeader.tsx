@@ -1,8 +1,9 @@
+import { IPropsNoteHeader } from "../../../interfaces/interfaceNotes";
 import NoteList from "../NotesList/NotesList";
 
 import "./NotesHeader.css";
 
-const NoteHeader = (props) => {
+const NoteHeader = (props: IPropsNoteHeader) => {
     const { notes, createNote, readNote, deleteNote, searchNote } = props;
 
     return (
