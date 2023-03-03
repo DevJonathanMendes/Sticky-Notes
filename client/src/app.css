@@ -29,9 +29,9 @@
 }
 
 body {
-    background-color: var(--color-0);
-    max-width: 720px;
-    min-width: 720px;
+    background-color: var(--color-1);
+    max-width: 820px;
+    min-width: 820px;
     min-height: 100vh;
     font-family: 'Trebuchet MS', sans-serif;
     color: #fff;
@@ -44,4 +44,8 @@ h1 {
 
 ul {
     list-style: none;
+}
+
+.app-container {
+    display: flex;
 }
