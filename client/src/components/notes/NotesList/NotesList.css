@@ -1,26 +1,26 @@
-.notes-list-container {
+.notes-list {
     overflow: auto;
 }
 
-.notes-list-item {
+.notes-list li {
+    background-color: var(--color-dark) !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-dark) !important;
     margin: 8px;
     border-top: 4px solid;
     border-radius: 4px;
     padding: 8px;
 }
 
-.text {
+.notes-list p {
     flex-grow: 1;
     word-wrap: break-word;
     max-height: calc(19px*4);
     overflow: hidden;
 }
 
-.icon-delete {
+.notes-list button {
     display: flex;
     justify-content: center;
     align-items: center;
