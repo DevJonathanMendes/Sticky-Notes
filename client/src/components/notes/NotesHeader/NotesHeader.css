@@ -1,0 +1,38 @@
+.notes-header {
+    background-color: var(--color-black);
+    min-width: 320px;
+    max-width: 320px;
+    margin: 10px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-header header {
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-header input[type=search] {
+    background-color: var(--color-dark);
+    color: #fff;
+
+    margin: 4px 10px;
+    border: none;
+    border-radius: 2px;
+    padding: 8px 4px 8px 12px;
+}
+
+.icons-color {
+    margin: 6px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icons-color button {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 4px;
+    border: none !important;
+}

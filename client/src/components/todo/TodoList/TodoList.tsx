@@ -1,6 +1,6 @@
 import { useState } from "react";
 import TodoForm from "../TodoForm/TodoForm";
-import { IPropsTodos, ITodo } from "../interfaceTodos";
+import { IPropsTodos, ITodo } from "../../../interfaces/interfaceTodos";
 import "./TodoList.css";
 
 const emptyTodo = { id: "", text: "", complete: false };

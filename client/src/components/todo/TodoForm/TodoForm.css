@@ -11,7 +11,7 @@ button[type=submit] {
 
 .todo-form-input {
     flex-direction: row;
-    background-color: var(--color-2);
+    background-color: var(--color-dark);
     color: #fff;
 
     margin: 8px;

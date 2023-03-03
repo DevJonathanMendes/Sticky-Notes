@@ -1,5 +1,5 @@
 .todo {
-    background-color: var(--color-1);
+    background-color: var(--color-black);
     height: 100vh;
     display: flex;
     flex-direction: column;

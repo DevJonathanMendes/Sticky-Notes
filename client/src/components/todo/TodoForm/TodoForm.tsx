@@ -1,6 +1,6 @@
 import { useState } from "react";
 import randomId from "../../../utils/randomId";
-import { IPropsTodoForm } from "../interfaceTodos";
+import { IPropsTodoForm } from "../../../interfaces/interfaceTodos";
 
 import "./TodoForm.css"
 

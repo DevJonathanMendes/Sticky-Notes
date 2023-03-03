@@ -19,7 +19,7 @@
 }
 
 .task-container {
-    background-color: var(--color-2);
+    background-color: var(--color-dark);
     flex-grow: 1;
     max-width: 420px;
     margin: 5px;

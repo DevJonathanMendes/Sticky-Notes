@@ -1,8 +1,8 @@
 import { useState } from "react";
 import randomId from "../../utils/randomId";
-import NoteHeader from "./NoteHeader/NoteHeader";
-import NoteSelected from "./NoteSelected/NoteSelected";
-import "./notes.css";
+import NoteHeader from "./NotesHeader/NotesHeader";
+import NoteSelected from "./NotesSelected/NotesSelected";
+import "./Notes.css";
 
 interface INote extends Object {
     id: string,
