@@ -8,10 +8,10 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <div>
-        <span onClick={() => setMode(true)}>NOTE</span>
-        <span onClick={() => setMode(false)}>NOTE</span>
-      </div>
+      <span className="switch">
+        <div onClick={() => setMode(true)}>NOTE</div>
+        <div onClick={() => setMode(false)}>NOTE</div>
+      </span>
       {mode ? <Notes /> : <Todo />}
     </div>
   );

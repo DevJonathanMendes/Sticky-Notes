@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NoteList from "./NoteList";
+import NoteList from "../NoteList/NoteList";
 
 const NoteHeader = (props) => {
     const { notes, createNote, readNote, deleteNote, searchNote } = props;
