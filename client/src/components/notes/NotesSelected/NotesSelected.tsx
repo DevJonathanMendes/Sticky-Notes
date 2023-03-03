@@ -10,7 +10,11 @@ const NoteSelected = (props: IPropsNoteSelected) => {
     return note ?
         <div key={note.id} className="note">
             <div className={`${note.color}`}>
-                <textarea onChange={handleChange} placeholder="Write a note..." value={note.text} />
+                <textarea
+                    onChange={handleChange}
+                    placeholder="Write a note..."
+                    value={note.text}
+                />
             </div>
         </div> : null;
 };
