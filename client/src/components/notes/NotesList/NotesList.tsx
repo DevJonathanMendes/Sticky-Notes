@@ -1,4 +1,4 @@
-import { IPropsNoteList } from "../../../interfaces/interfaceNotes";
+import { IPropsNoteList } from "../../../interfaces/INotes";
 
 import "./NotesList.css";
 

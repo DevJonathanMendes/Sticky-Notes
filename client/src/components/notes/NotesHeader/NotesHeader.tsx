@@ -1,4 +1,4 @@
-import { IPropsNoteHeader } from "../../../interfaces/interfaceNotes";
+import { IPropsNoteHeader } from "../../../interfaces/INotes";
 import NoteList from "../NotesList/NotesList";
 
 import "./NotesHeader.css";

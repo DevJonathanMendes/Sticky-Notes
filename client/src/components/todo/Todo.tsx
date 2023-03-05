@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ITodo } from '../../interfaces/interfaceTodos';
+import { ITodo } from '../../interfaces/ITodos';
 import TodoForm from './TodoForm/TodoForm';
 import TodoList from './TodoList/TodoList';
 

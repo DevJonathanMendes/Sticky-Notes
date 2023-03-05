@@ -1,4 +1,4 @@
-import { IPropsNoteSelected } from "../../../interfaces/interfaceNotes";
+import { IPropsNoteSelected } from "../../../interfaces/INotes";
 import "./NotesSelected.css";
 
 const NoteSelected = (props: IPropsNoteSelected) => {
