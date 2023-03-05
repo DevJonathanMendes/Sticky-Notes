@@ -4,6 +4,8 @@
     --color-yellow: #FFCB47;
     --color-red: #A4031F;
     --color-green: #34623F;
+    --color-blue: #147dd2;
+    --color-orange: #e76f00;
 }
 
 
@@ -36,6 +38,16 @@ body {
 .green {
     background-color: var(--color-green);
     border-top-color: var(--color-green) !important;
+}
+
+.blue {
+    background-color: var(--color-blue);
+    border-top-color: var(--color-blue) !important;
+}
+
+.orange {
+    background-color: var(--color-orange);
+    border-top-color: var(--color-orange) !important;
 }
 
 h1 {

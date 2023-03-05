@@ -19,6 +19,8 @@ const NoteHeader = (props: IPropsNoteHeader) => {
                     <button className="yellow" onClick={() => createNote("yellow")} />
                     <button className="red" onClick={() => createNote("red")} />
                     <button className="green" onClick={() => createNote("green")} />
+                    <button className="blue" onClick={() => createNote("blue")} />
+                    <button className="orange" onClick={() => createNote("orange")} />
                 </div>
             </header>
             <NoteList notes={notes} deleteNote={deleteNote} readNote={readNote} />
