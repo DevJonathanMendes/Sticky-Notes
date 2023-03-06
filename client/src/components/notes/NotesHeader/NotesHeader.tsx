@@ -1,4 +1,5 @@
 import { IPropsNoteHeader } from "../../../interfaces/INotes";
+import Colors from "../../Colors/Colors";
 import NoteList from "../NotesList/NotesList";
 
 import "./NotesHeader.css";
@@ -15,13 +16,7 @@ const NoteHeader = (props: IPropsNoteHeader) => {
                     onChange={(e) => searchNote(e.target.value)}
                     placeholder="Research..."
                 />
-                <div className="icons-color">
-                    <button className="yellow" onClick={() => createNote("yellow")} />
-                    <button className="red" onClick={() => createNote("red")} />
-                    <button className="green" onClick={() => createNote("green")} />
-                    <button className="blue" onClick={() => createNote("blue")} />
-                    <button className="orange" onClick={() => createNote("orange")} />
-                </div>
+                <Colors onClick={createNote} />
             </header>
             <NoteList notes={notes} deleteNote={deleteNote} readNote={readNote} />
         </div>
