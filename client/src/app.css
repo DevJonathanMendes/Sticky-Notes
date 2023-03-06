@@ -1,13 +1,13 @@
 :root {
     --color-black: #202020;
     --color-dark: #333333;
+    --color-dark-hover: #4f4f4f;
     --color-yellow: #FFCB47;
     --color-red: #A4031F;
     --color-green: #3aa854;
     --color-blue: #147dd2;
     --color-orange: #e76f00;
 }
-
 
 * {
     margin: 0;
@@ -56,6 +56,11 @@ h1 {
 
 ul {
     list-style: none;
+}
+
+li:hover {
+    background-color: var(--color-dark-hover) !important;
+    cursor: pointer;
 }
 
 .app-container {

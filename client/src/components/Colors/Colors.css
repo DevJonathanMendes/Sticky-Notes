@@ -10,3 +10,8 @@
     border-radius: 4px;
     border: none !important;
 }
+
+.icons-color button:hover {
+    border: 2px solid#fff !important;
+    cursor: pointer;
+}

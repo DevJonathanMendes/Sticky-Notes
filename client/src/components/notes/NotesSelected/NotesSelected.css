@@ -3,14 +3,12 @@
     overflow: auto;
 }
 
-.note-colors{
+.note-colors {
     margin-bottom: 10px;
 }
 
 .note-note {
     background-color: var(--color-dark) !important;
-    
-
     margin: 10px;
     border-top: 20px solid;
     border-radius: 4px;
