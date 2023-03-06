@@ -67,6 +67,15 @@ const Notes = () => {
         ));
     };
 
+    const setNewColor = (color: string, id: string | null) => {
+        setNotes(notes => notes.map(note => {
+            if (note.id === id)
+                note.color = color;
+
+            return note;
+        }));
+    };
+
     return (
         <div className="notes">
             <NoteHeader
@@ -76,7 +85,7 @@ const Notes = () => {
                 readNote={readNote}
                 deleteNote={deleteNote}
             />
-            <NoteSelected notes={notes} updateNote={updateNote} />
+            <NoteSelected notes={notes} updateNote={updateNote} setNewColor={setNewColor} />
         </div >
     );
 };

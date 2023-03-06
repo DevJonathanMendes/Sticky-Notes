@@ -1,4 +1,5 @@
 import { IPropsNoteSelected } from "../../../interfaces/INotes";
+import Colors from "../../Colors/Colors";
 import "./NotesSelected.css";
 
 const NoteSelected = (props: IPropsNoteSelected) => {
@@ -9,7 +10,8 @@ const NoteSelected = (props: IPropsNoteSelected) => {
 
     return note ?
         <div key={note.id} className="note">
-            <div className={`${note.color}`}>
+            <div className={`note-note ${note.color}`}>
+                <div className="note-colors"><Colors onClick={props.setNewColor} noteId={note.id} /></div>
                 <textarea
                     onChange={handleChange}
                     placeholder="Write a note..."

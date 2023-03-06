@@ -3,9 +3,13 @@
     overflow: auto;
 }
 
-.note div {
+.note-colors{
+    margin-bottom: 10px;
+}
+
+.note-note {
     background-color: var(--color-dark) !important;
-    display: flex;
+    
 
     margin: 10px;
     border-top: 20px solid;
@@ -20,7 +24,7 @@
     min-width: 320px;
     max-width: 420px;
     min-height: 360px;
-    max-height: 90vh;
+    max-height: 80vh;
 
     border: none;
 }
