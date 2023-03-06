@@ -1,5 +1,6 @@
 interface IColors {
-    onClick: (color: string) => void
+    noteId?: string
+    onClick: (color: string, id: string | null) => void
 };
 
 export type { IColors };
