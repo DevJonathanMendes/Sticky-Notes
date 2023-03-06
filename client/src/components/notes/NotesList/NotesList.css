@@ -13,6 +13,11 @@
     padding: 8px;
 }
 
+.notes-list li:hover {
+    background-color: var(--color-dark-hover) !important;
+    cursor: pointer;
+}
+
 .notes-list p {
     flex-grow: 1;
     word-wrap: break-word;
@@ -21,6 +26,7 @@
 }
 
 .notes-list button {
+    background-color: unset;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,5 +34,11 @@
     min-height: 24px;
 
     margin: 2px;
+    border: none;
     padding: 2px;
+}
+
+.notes-list button svg:hover {
+    fill: #919191;
+    cursor: pointer;
 }
