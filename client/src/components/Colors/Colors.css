@@ -1,0 +1,13 @@
+.icons-color {
+    margin: 6px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icons-color button {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 4px;
+    border: none !important;
+}
