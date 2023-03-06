@@ -13,6 +13,10 @@
     flex-direction: column;
 }
 
+.notes-header-colors {
+    margin: 8px 0;
+}
+
 .notes-header input[type=search] {
     background-color: var(--color-dark);
     color: #fff;

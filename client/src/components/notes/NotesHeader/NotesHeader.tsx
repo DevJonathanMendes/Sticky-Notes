@@ -16,7 +16,9 @@ const NoteHeader = (props: IPropsNoteHeader) => {
                     onChange={(e) => searchNote(e.target.value)}
                     placeholder="Research..."
                 />
-                <Colors onClick={createNote} />
+                <div className="notes-header-colors">
+                    <Colors onClick={createNote} />
+                </div>
             </header>
             <NoteList notes={notes} deleteNote={deleteNote} readNote={readNote} />
         </div>
