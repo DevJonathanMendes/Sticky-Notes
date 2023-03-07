@@ -25,31 +25,6 @@ body {
     margin: 0 auto;
 }
 
-.yellow {
-    background-color: var(--color-yellow);
-    border-top-color: var(--color-yellow) !important;
-}
-
-.red {
-    background-color: var(--color-red);
-    border-top-color: var(--color-red) !important;
-}
-
-.green {
-    background-color: var(--color-green);
-    border-top-color: var(--color-green) !important;
-}
-
-.blue {
-    background-color: var(--color-blue);
-    border-top-color: var(--color-blue) !important;
-}
-
-.orange {
-    background-color: var(--color-orange);
-    border-top-color: var(--color-orange) !important;
-}
-
 h1 {
     margin: 8px 4px;
 }
