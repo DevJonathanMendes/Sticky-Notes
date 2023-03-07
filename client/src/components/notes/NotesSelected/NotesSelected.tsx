@@ -10,8 +10,14 @@ const NoteSelected = (props: IPropsNoteSelected) => {
 
     return note ?
         <div key={note.id} className="note">
-            <div className={`note-note ${note.color}`}>
-                <div className="note-colors"><Colors onClick={props.setNewColor} noteId={note.id} /></div>
+            <div className={`note-note`}>
+                <div className={`note-container-colors ${note.color}`}>
+                    <Colors
+                        style="note-colors"
+                        onClick={props.setNewColor}
+                        noteId={note.id}
+                    />
+                </div>
                 <textarea
                     onChange={handleChange}
                     placeholder="Write a note..."

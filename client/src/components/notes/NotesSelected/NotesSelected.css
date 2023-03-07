@@ -3,16 +3,21 @@
     overflow: auto;
 }
 
-.note-colors {
-    margin-bottom: 10px;
-}
-
 .note-note {
     background-color: var(--color-dark) !important;
     margin: 10px;
-    border-top: 20px solid;
-    border-radius: 4px;
-    padding: 15px 10px;
+    border-radius: 5px;
+}
+
+.note-container-colors {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.note-colors {
+    flex-grow: 1;
+    justify-content: start;
+    border-radius: 0 !important;
 }
 
 .note textarea {
@@ -24,5 +29,6 @@
     min-height: 360px;
     max-height: 80vh;
 
+    margin: 10px;
     border: none;
 }

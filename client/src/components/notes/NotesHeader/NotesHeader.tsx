@@ -20,7 +20,10 @@ const NoteHeader = (props: IPropsNoteHeader) => {
                     <Colors onClick={createNote} />
                 </div>
             </header>
-            <NoteList notes={notes} deleteNote={deleteNote} readNote={readNote} />
+            <NoteList
+                notes={notes}
+                deleteNote={deleteNote}
+                readNote={readNote} />
         </div>
     );
 };
