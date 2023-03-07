@@ -6,8 +6,17 @@ import NoteSelected from "./NotesSelected/NotesSelected";
 
 import "./Notes.css";
 
+const memNotes: INote[] = [];
+
+for (let indexItem = 0; indexItem < localStorage.length; indexItem++) {
+    const keyNote = localStorage.key(indexItem);
+    const itemNote = JSON.parse(localStorage.getItem(keyNote));
+
+    memNotes.push(itemNote);
+};
+
 const Notes = () => {
-    const [notes, setNotes] = useState<INote[]>([]);
+    const [notes, setNotes] = useState<INote[]>(memNotes);
 
     const searchNote = (searchText: string) => {
         setNotes(notes => notes.map(note => {
@@ -31,26 +40,30 @@ const Notes = () => {
             search: true
         };
 
+        localStorage.setItem(newNote.id, JSON.stringify(newNote));
         setNotes([newNote, ...notes]);
         readNote(newNote.id);
     };
 
     const readNote = (id: string) => {
-        deleteNoteNull();
         setNotes(notes => notes.map(note => {
             note.id === id
                 ? note.selected = true
                 : note.selected = false;
 
+            localStorage.setItem(note.id, JSON.stringify(note));
             return note;
         }));
+        deleteNoteNull();
     };
 
     const updateNote = (id: string, text: string) => {
         if (text.length < 256) {
             setNotes(notes => notes.map(note => {
-                if (note.id === id)
+                if (note.id === id) {
                     note.text = text;
+                    localStorage.setItem(id, JSON.stringify(note));
+                };
 
                 return note;
             }));
@@ -58,19 +71,29 @@ const Notes = () => {
     };
 
     const deleteNote = (id: string) => {
+        localStorage.removeItem(id);
         setNotes(notes => notes.filter(note => note.id !== id));
     };
 
     const deleteNoteNull = () => {
-        setNotes(notes => notes.filter(({ text, selected }) =>
-            text.trim().length > 0 || selected
+        setNotes(notes => notes.filter(({ id, text, selected }) => {
+            if (text.trim().length > 0)
+                return true
+            if (selected)
+                return true
+
+            localStorage.removeItem(id);
+            return false;
+        }
         ));
     };
 
     const setNewColor = (color: string, id: string | null) => {
         setNotes(notes => notes.map(note => {
-            if (note.id === id)
+            if (note.id === id) {
                 note.color = color;
+                localStorage.setItem(id, JSON.stringify(note));
+            };
 
             return note;
         }));
