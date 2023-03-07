@@ -85,7 +85,11 @@ const Notes = () => {
                 readNote={readNote}
                 deleteNote={deleteNote}
             />
-            <NoteSelected notes={notes} updateNote={updateNote} setNewColor={setNewColor} />
+            <NoteSelected
+                notes={notes}
+                updateNote={updateNote}
+                setNewColor={setNewColor}
+            />
         </div >
     );
 };
