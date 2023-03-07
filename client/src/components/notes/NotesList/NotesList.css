@@ -3,7 +3,7 @@
 }
 
 .notes-list li {
-    background-color: var(--color-dark) !important;
+    background-color: var(--color-dark);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,8 +13,12 @@
     padding: 8px;
 }
 
-.notes-list li:hover {
+.selected {
     background-color: var(--color-dark-hover) !important;
+}
+
+.notes-list li:hover {
+    background-color: var(--color-dark-hover);
     cursor: pointer;
 }
 

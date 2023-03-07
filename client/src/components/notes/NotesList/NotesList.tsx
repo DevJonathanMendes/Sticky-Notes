@@ -7,8 +7,8 @@ const NoteList = (props: IPropsNoteList) => {
 
     return (
         <div className="notes-list">
-            <ul>{notes.map(({ id, color, text, search }) => search ?
-                <li key={id} className={`notes-list-item ${color}`}>
+            <ul>{notes.map(({ id, color, text, search, selected }) => search ?
+                <li key={id} className={`notes-list-item ${color} ${selected ? "selected" : ""}`}>
                     <p onClick={() => readNote(id)}>{text || "Write a note..."}</p>
                     <button onClick={() => deleteNote(id)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 16 16">
