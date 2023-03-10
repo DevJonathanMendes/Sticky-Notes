@@ -1,7 +1,9 @@
+import { INote } from "./INotes";
+
 interface IColors {
     style?: string,
-    noteId?: string
-    onClick: (color: string, id: string | null) => void
+    note?: INote,
+    onClick: (color: string, id?: string) => void
 };
 
 export type { IColors };

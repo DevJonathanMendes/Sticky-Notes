@@ -87,7 +87,7 @@ const Notes = () => {
         ));
     };
 
-    const setNewColor = (color: string, id: string | null) => {
+    const setNewColor = (color: string, id?: string) => {
         setNotes(notes => notes.map(note => {
             if (note.id === id) {
                 note.color = color;

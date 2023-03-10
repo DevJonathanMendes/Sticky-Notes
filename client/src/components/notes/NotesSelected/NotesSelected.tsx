@@ -14,8 +14,8 @@ const NoteSelected = (props: IPropsNoteSelected) => {
                 <div className={`note-container-colors ${note.color}`}>
                     <Colors
                         style="note-colors"
+                        note={note}
                         onClick={props.setNewColor}
-                        noteId={note.id}
                     />
                 </div>
                 <textarea

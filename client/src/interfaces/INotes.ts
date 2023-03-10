@@ -23,7 +23,7 @@ interface IPropsNoteList {
 interface IPropsNoteSelected {
     notes: INote[],
     updateNote: (id: string, text: string) => void,
-    setNewColor: (color: string, id: string | null) => void
+    setNewColor: (color: string, id?: string) => void
 }
 
 export type { INote, IPropsNoteHeader, IPropsNoteList, IPropsNoteSelected };
