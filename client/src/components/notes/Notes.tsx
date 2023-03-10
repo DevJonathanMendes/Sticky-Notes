@@ -6,17 +6,18 @@ import NoteSelected from "./NotesSelected/NotesSelected";
 
 import "./Notes.css";
 
-const memNotes: INote[] = [];
+const localNotes: INote[] = [];
 
 for (let indexItem = 0; indexItem < localStorage.length; indexItem++) {
-    const keyNote = localStorage.key(indexItem);
-    const itemNote = JSON.parse(localStorage.getItem(keyNote));
+    const keyNote: string = localStorage.key(indexItem) || "";
+    const itemNoteStr = localStorage.getItem(keyNote) || "";
+    const itemNoteObj = JSON.parse(itemNoteStr);
 
-    memNotes.push(itemNote);
+    localNotes.push(itemNoteObj);
 };
 
 const Notes = () => {
-    const [notes, setNotes] = useState<INote[]>(memNotes);
+    const [notes, setNotes] = useState<INote[]>(localNotes);
 
     const searchNote = (searchText: string) => {
         setNotes(notes => notes.map(note => {
@@ -59,14 +60,12 @@ const Notes = () => {
 
     const updateNote = (id: string, text: string) => {
         if (text.length < 256) {
-            setNotes(notes => notes.map(note => {
-                if (note.id === id) {
-                    note.text = text;
-                    localStorage.setItem(id, JSON.stringify(note));
-                };
+            const updateNote: INote = notes.filter(note => note.id === id)[0];
+            updateNote.text = text;
+            localStorage.setItem(id, JSON.stringify(updateNote));
 
-                return note;
-            }));
+
+            setNotes([updateNote, ...notes.filter(note => note.id !== id)]);
         };
     };
 
