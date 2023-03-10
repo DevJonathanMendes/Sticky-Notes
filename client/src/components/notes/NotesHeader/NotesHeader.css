@@ -26,3 +26,12 @@
     border-radius: 2px;
     padding: 8px 4px 8px 12px;
 }
+
+.notes-header input[type=search]:hover {
+    background-color: var(--color-dark-hover);
+}
+
+.notes-header input[type=search]:focus {
+    background-color: var(--color-dark);
+    outline: none;
+}
