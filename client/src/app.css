@@ -36,3 +36,18 @@ ul {
 .app-container {
     display: flex;
 }
+
+.switch,
+span {
+    display: flex;
+    flex-direction: column;
+}
+
+.switch>span {
+    margin: 8px 0;
+}
+
+svg:hover {
+    fill: var(--color-dark-hover);
+    cursor: pointer;
+}
