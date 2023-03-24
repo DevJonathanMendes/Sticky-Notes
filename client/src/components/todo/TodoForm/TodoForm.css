@@ -19,6 +19,7 @@ button[type=submit] {
 }
 
 .todo-form-input>input[type=text] {
+    width: 480px;
     height: 34px;
     border: none;
     border-radius: 2px;
