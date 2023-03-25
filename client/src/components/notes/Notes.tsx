@@ -13,7 +13,8 @@ for (let indexItem = 0; indexItem < localStorage.length; indexItem++) {
     const itemNoteStr = localStorage.getItem(keyNote) || "";
     const itemNoteObj = JSON.parse(itemNoteStr);
 
-    localNotes.push(itemNoteObj);
+    if (itemNoteObj.type === "note")
+        localNotes.push(itemNoteObj);
 };
 
 const Notes = () => {
@@ -33,8 +34,9 @@ const Notes = () => {
     };
 
     const createNote = (color: string) => {
-        const newNote = {
+        const newNote: INote = {
             id: randomId(),
+            type: "note",
             color: color,
             text: "",
             selected: true,

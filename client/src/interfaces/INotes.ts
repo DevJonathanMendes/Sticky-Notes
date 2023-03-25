@@ -1,5 +1,6 @@
 interface INote {
     id: string,
+    type: "note",
     text: string,
     color: string,
     selected: true | false,
