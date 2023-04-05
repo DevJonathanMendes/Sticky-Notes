@@ -42,9 +42,14 @@ const App = () => {
           </svg>
         </span>
 
-      </div>
-      {mode === "notes" ? <Notes /> : <Todo />}
-    </div>
+      </div>{mode === "notes" ? (() => {
+        document.title = "Notes"
+        return <Notes />
+      })() : (() => {
+        document.title = "To-do"
+        return <Todo />
+      })()
+      }</div>
   );
 };
 
