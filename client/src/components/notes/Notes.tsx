@@ -39,6 +39,7 @@ const Notes = () => {
             type: "note",
             color: color,
             text: "",
+            date: new Date().toLocaleDateString(),
             selected: true,
             search: true
         };

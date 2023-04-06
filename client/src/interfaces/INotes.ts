@@ -2,6 +2,7 @@ interface INote {
     id: string,
     type: "note",
     text: string,
+    date: string,
     color: string,
     selected: true | false,
     search: true | false
