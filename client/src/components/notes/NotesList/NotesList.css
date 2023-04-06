@@ -33,12 +33,13 @@
 }
 
 .note-date {
-    align-self: flex-end;
+    align-self: flex-start;
     font-size: 12px;
-    padding: 4px 0 0 0 !important;
+    padding: 4px 0 2px 0 !important;
 }
 
 .notes-list p {
+    align-self: start;
     overflow: hidden;
     word-break: break-all;
     word-wrap: break-word;
