@@ -7,9 +7,10 @@ const NoteList = (props: IPropsNoteList) => {
 
     return (
         <div className="notes-list">
-            <ul>{notes.map(({ id, color, text, search, selected }) => search ?
+            <ul>{notes.map(({ id, color, text, date, search, selected }) => search ?
                 <li key={id} className={`notes-list-item ${color} ${selected ? "selected" : ""}`}>
                     <div onClick={() => readNote(id)}>
+                        <span className="note-date">{date}</span>
                         <p>{text || "Write a note..."}</p>
                     </div>
                     <button onClick={() => deleteNote(id)}>

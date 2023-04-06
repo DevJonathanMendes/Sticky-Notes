@@ -3,6 +3,7 @@
 }
 
 .notes-list li,
+.notes-list div,
 .notes-list button {
     display: flex;
     align-items: center;
@@ -26,8 +27,15 @@
 }
 
 .notes-list div {
+    flex-direction: column;
     flex-grow: 1;
-    padding: 8px;
+    padding: 0px 0px 6px 8px;
+}
+
+.note-date {
+    align-self: flex-end;
+    font-size: 12px;
+    padding: 4px 0 0 0 !important;
 }
 
 .notes-list p {
