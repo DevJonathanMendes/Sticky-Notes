@@ -3,22 +3,23 @@ import { INote } from "../../interfaces/INotes";
 import randomId from "../../utils/randomId";
 import NoteHeader from "./NotesHeader/NotesHeader";
 import NoteSelected from "./NotesSelected/NotesSelected";
+import ManipulateLocalStorage from "../../utils/ManipulateLocalStorage";
 
 import "./Notes.css";
 
-const localNotes: INote[] = [];
-
-for (let indexItem = 0; indexItem < localStorage.length; indexItem++) {
-    const keyNote: string = localStorage.key(indexItem) || "";
-    const itemNoteStr = localStorage.getItem(keyNote) || "";
-    const itemNoteObj = JSON.parse(itemNoteStr);
-
-    if (itemNoteObj.type === "note")
-        localNotes.push(itemNoteObj);
+const dateOptions = {
+    weekday: "long",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
 };
 
+const localStorageNotes = new ManipulateLocalStorage("notes");
+
 const Notes = () => {
-    const [notes, setNotes] = useState<INote[]>(localNotes);
+    const [notes, setNotes] = useState<INote[]>(localStorageNotes.readItem());
 
     const searchNote = (searchText: string) => {
         setNotes(notes => notes.map(note => {
@@ -39,12 +40,12 @@ const Notes = () => {
             type: "note",
             color: color,
             text: "",
-            date: new Date().toLocaleDateString(),
+            date: new Date().toLocaleDateString("pt-BR", dateOptions),
             selected: true,
             search: true
         };
 
-        localStorage.setItem(newNote.id, JSON.stringify(newNote));
+        localStorageNotes.createItem(newNote);
         setNotes([newNote, ...notes]);
         readNote(newNote.id);
     };
@@ -55,7 +56,7 @@ const Notes = () => {
                 ? note.selected = true
                 : note.selected = false;
 
-            localStorage.setItem(note.id, JSON.stringify(note));
+            localStorageNotes.updateItem(note);
             return note;
         }));
         deleteNoteNull();
@@ -63,38 +64,37 @@ const Notes = () => {
 
     const updateNote = (id: string, text: string) => {
         if (text.length < 256) {
-            const updateNote: INote = notes.filter(note => note.id === id)[0];
-            updateNote.text = text;
-            localStorage.setItem(id, JSON.stringify(updateNote));
+            setNotes(notes => notes.map(note => {
+                if (note.id === id) {
+                    note.date = new Date().toLocaleDateString("pt-BR", dateOptions);
+                    note.text = text;
+                };
 
-
-            setNotes([updateNote, ...notes.filter(note => note.id !== id)]);
+                localStorageNotes.updateItem(note);
+                return note;
+            }));
         };
     };
 
     const deleteNote = (id: string) => {
-        localStorage.removeItem(id);
+        localStorageNotes.deleteItem(id);
         setNotes(notes => notes.filter(note => note.id !== id));
     };
 
     const deleteNoteNull = () => {
-        setNotes(notes => notes.filter(({ id, text, selected }) => {
-            if (text.trim().length > 0)
-                return true
-            if (selected)
-                return true
+        setNotes(notes => notes.filter(note => {
+            if (note.text.trim().length > 0 || note.selected)
+                return note;
 
-            localStorage.removeItem(id);
-            return false;
-        }
-        ));
+            localStorageNotes.deleteItem(note.id);
+        }));
     };
 
     const setNewColor = (color: string, id?: string) => {
         setNotes(notes => notes.map(note => {
             if (note.id === id) {
                 note.color = color;
-                localStorage.setItem(id, JSON.stringify(note));
+                localStorageNotes.updateItem(note);
             };
 
             return note;
