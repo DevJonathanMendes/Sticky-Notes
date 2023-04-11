@@ -1,16 +1,24 @@
-import { IPropsNoteList } from "../../../interfaces/INotes";
+import { INote, IPropsNoteList } from "../../../interfaces/INotes";
 
 import "./NotesList.css";
 
+const numDate = (dateStr: string) => Number(new Date(dateStr));
+
+const sortDesc = (notes: INote[]) =>
+    notes.sort((date1, date2) =>
+        numDate(date2.date) - numDate(date1.date)
+    );
+
 const NoteList = (props: IPropsNoteList) => {
     const { notes, readNote, deleteNote } = props;
+    const notesSort = sortDesc(notes);
 
     return (
         <div className="notes-list">
-            <ul>{notes.map(({ id, color, text, date, search, selected }) => search ?
+            <ul>{notesSort.map(({ id, color, text, date, search, selected }) => search ?
                 <li key={id} className={`notes-list-item ${color} ${selected ? "selected" : ""}`}>
                     <div onClick={() => readNote(id)}>
-                        <span className="note-date">{date}</span>
+                        <span className="note-date">{new Date(date).toLocaleString()}</span>
                         <p>{text || "Write a note..."}</p>
                     </div>
                     <button onClick={() => deleteNote(id)}>
