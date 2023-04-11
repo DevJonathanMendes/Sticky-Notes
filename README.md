@@ -1,2 +1,2 @@
-# todolist
-todolist web app
+# Notes & To-Do
+Web App
