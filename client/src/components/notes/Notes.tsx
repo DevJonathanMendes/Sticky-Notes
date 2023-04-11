@@ -7,15 +7,6 @@ import ManipulateLocalStorage from "../../utils/ManipulateLocalStorage";
 
 import "./Notes.css";
 
-const dateOptions = {
-    weekday: "long",
-    year: "numeric",
-    month: "numeric",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-};
-
 const localStorageNotes = new ManipulateLocalStorage("notes");
 
 const Notes = () => {
@@ -40,7 +31,7 @@ const Notes = () => {
             type: "note",
             color: color,
             text: "",
-            date: new Date().toLocaleDateString("pt-BR", dateOptions),
+            date: new Date().toISOString(),
             selected: true,
             search: true
         };
@@ -66,7 +57,7 @@ const Notes = () => {
         if (text.length < 256) {
             setNotes(notes => notes.map(note => {
                 if (note.id === id) {
-                    note.date = new Date().toLocaleDateString("pt-BR", dateOptions);
+                    note.date = new Date().toISOString();
                     note.text = text;
                 };
 

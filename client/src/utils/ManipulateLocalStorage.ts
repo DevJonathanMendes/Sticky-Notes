@@ -24,9 +24,8 @@ class ManipulateLocalStorage {
 
     updateItem(upItem: { id: string }) {
         const items = this.readItem();
-        const up = items.filter((item: { id: string }) => item.id !== upItem.id);
-        up.unshift(upItem);
-        setItem(this.keyName, up);
+        setItem(this.keyName, items.map((item: { id: string }) =>
+            item.id === upItem.id ? upItem : item));
     };
 
     deleteItem(id: string) {
