@@ -1,11 +1,13 @@
 {
-  "name": "todolist",
+  "name": "web_app",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/DevJonathanMendes/todolist.git",
   "author": "DevJonathanMendes <jonathanbarreiro88@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "cd client & yarn dev"
+    "dev": "cd client & yarn dev",
+    "build": "cd client & yarn build",
+    "preview": "cd client & yarn preview"
   }
 }
