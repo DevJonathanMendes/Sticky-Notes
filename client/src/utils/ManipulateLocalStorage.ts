@@ -1,5 +1,8 @@
 const setItem = (id: string, obj: {}) => localStorage.setItem(id, JSON.stringify(obj));
-const getItem = (id: string) => JSON.parse(localStorage.getItem(id));
+const getItem = (id: string) => {
+    const items = localStorage.getItem(id);
+    return items ? JSON.parse(items) : null;
+};
 
 class ManipulateLocalStorage {
     constructor(key: string) {
