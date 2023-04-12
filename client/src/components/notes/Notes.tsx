@@ -28,7 +28,6 @@ const Notes = () => {
     const createNote = (color: string) => {
         const newNote: INote = {
             id: randomId(),
-            type: "note",
             color: color,
             text: "",
             date: new Date().toISOString(),
