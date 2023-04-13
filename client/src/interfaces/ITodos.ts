@@ -1,6 +1,5 @@
 interface ITodo {
     id: string,
-    type: "todo",
     text: string,
     complete: true | false
 };

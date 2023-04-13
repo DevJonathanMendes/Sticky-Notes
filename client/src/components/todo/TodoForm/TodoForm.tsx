@@ -27,7 +27,6 @@ const TodoForm = (props: IPropsTodoForm) => {
 
         props.onSubmit({
             id: id || randomId(),
-            type: "todo",
             text: inputTextValue,
             complete: false
         });
