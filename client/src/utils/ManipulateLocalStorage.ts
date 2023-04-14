@@ -1,4 +1,9 @@
-const setItem = (id: string, obj: {}) => localStorage.setItem(id, JSON.stringify(obj));
+interface Id { id: string };
+
+const setItem = (id: string, obj: {}) => {
+    localStorage.setItem(id, JSON.stringify(obj));
+};
+
 const getItem = (id: string) => {
     const items = localStorage.getItem(id);
     return items ? JSON.parse(items) : null;
@@ -13,27 +18,27 @@ class ManipulateLocalStorage {
     private keyName: string;
 
     createItem(newItem: {}) {
-        const items = getItem(this.keyName);
+        const items = this.readItem();
         items.unshift(newItem);
         setItem(this.keyName, items);
     };
 
     readItem(id?: string) {
-        return id ?
-            getItem(this.keyName)
-                .filter((item: { id: string }) => item.id === id)
-            : getItem(this.keyName);
+        const items = getItem(this.keyName);
+        return id
+            ? items.filter((item: Id) => item.id === id)
+            : items;
     };
 
-    updateItem(upItem: { id: string }) {
+    updateItem(upItem: Id) {
         const items = this.readItem();
-        setItem(this.keyName, items.map((item: { id: string }) =>
+        setItem(this.keyName, items.map((item: Id) =>
             item.id === upItem.id ? upItem : item));
     };
 
     deleteItem(id: string) {
-        const items = getItem(this.keyName);
-        setItem(this.keyName, items.filter((item: { id: string }) =>
+        const items = this.readItem();
+        setItem(this.keyName, items.filter((item: Id) =>
             item.id != id));
     };
 };
