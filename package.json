@@ -6,6 +6,7 @@
   "author": "DevJonathanMendes <jonathanbarreiro88@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "install-client": "cd client & yarn",
     "dev": "cd client & yarn dev",
     "build": "cd client & yarn build",
     "preview": "cd client & yarn preview"
