@@ -2,7 +2,7 @@
   "name": "web_app",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/DevJonathanMendes/todolist.git",
+  "repository": "https://github.com/DevJonathanMendes/notes-and-todolist.git",
   "author": "DevJonathanMendes <jonathanbarreiro88@gmail.com>",
   "license": "MIT",
   "scripts": {
