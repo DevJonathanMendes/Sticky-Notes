@@ -15,10 +15,10 @@ Comando|Descrição
 
 ## 🛠️ Construído com
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) - Linguagem de programação.
-- [TypeScript](https://) - Tipagem para JavaScript.
-- [Node.JS/TS](https://) - Ambiente de execução JavaScript.
+- [TypeScript](https://www.typescriptlang.org/) - Tipagem para JavaScript.
+- [Node.JS/TS](https://nodejs.org/pt-br/) - Ambiente de execução JavaScript.
 - [Yarn](https://yarnpkg.com/) - Gerenciador de pacotes.
-- [React.JS/TS](http://) - Framework front-end.
+- [React.JS/TS](https://react.dev/) - Framework front-end.
 
 ## ✒️ Autores
 - **Jonathan Mendes** - [GitHub](https://github.com/DevJonathanMendes)
