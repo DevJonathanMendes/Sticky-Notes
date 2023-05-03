@@ -92,7 +92,7 @@ const Notes = () => {
     };
 
     return (
-        <div className="notes">
+        <div className="StickyNotes">
             <NoteHeader
                 notes={notes}
                 searchNote={searchNote}
