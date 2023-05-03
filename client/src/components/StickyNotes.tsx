@@ -5,7 +5,7 @@ import NoteHeader from "./NotesHeader/NotesHeader";
 import NoteSelected from "./NotesSelected/NotesSelected";
 import ManipulateLocalStorage from "../utils/ManipulateLocalStorage";
 
-import "./Notes.css";
+import "./StickyNotes.css";
 
 const localStorageNotes = new ManipulateLocalStorage("notes");
 

@@ -1,6 +1,6 @@
-import Notes from "./components/Notes";
+import Notes from "./components/StickyNotes";
 
-import "./app.css";
+import "./App.css";
 
 const App = () => <Notes />;
 
