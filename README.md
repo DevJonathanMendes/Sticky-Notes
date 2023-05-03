@@ -1,5 +1,5 @@
-# Notes & To-do
-Web App de notas e lista de tarefas.
+# Sticky Notes
+Web App de Notas Autoadesivas.
 
 ## 🚀 Começando
 ### 📋 Pré-requisitos
