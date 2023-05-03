@@ -1,23 +1,8 @@
-.notes-header {
-    background-color: var(--color-black);
-    min-width: 320px;
-    max-width: 320px;
-    margin: 10px;
-    padding-bottom: 20px;
+header {
     display: flex;
     flex-direction: column;
 }
-
-.notes-header header {
-    display: flex;
-    flex-direction: column;
-}
-
-.notes-header-colors {
-    margin: 8px 0;
-}
-
-.notes-header input[type=search] {
+header input[type=search] {
     background-color: var(--color-dark);
     color: #fff;
 
@@ -28,10 +13,10 @@
     outline: none;
 }
 
-.notes-header input[type=search]:hover {
+header input[type=search]:hover {
     background-color: var(--color-dark-hover);
 }
 
-.notes-header input[type=search]:focus {
+header input[type=search]:focus {
     background-color: var(--color-dark);
 }

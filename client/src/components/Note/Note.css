@@ -1,15 +1,10 @@
-.note {
-    width: 100%;
-    overflow: auto;
-}
-
-.note-note {
+.note>div {
     background-color: var(--color-dark) !important;
     margin: 10px;
     border-radius: 5px;
 }
 
-.note-container-colors {
+.container-colors {
     display: flex;
     margin-bottom: 10px;
 }
@@ -18,9 +13,10 @@
     flex-grow: 1;
     justify-content: start;
     border-radius: 0 !important;
+    margin: 0 !important;
 }
 
-.note textarea {
+textarea {
     background-color: var(--color-dark);
     color: #fff;
     font-size: 16px;

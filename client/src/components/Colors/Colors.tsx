@@ -1,4 +1,5 @@
 import { IColors } from "../../interfaces/IColors";
+
 import "./Colors.css";
 
 const Colors = (props: IColors) => {

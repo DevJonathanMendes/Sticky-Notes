@@ -1,8 +1,11 @@
 import { useState } from "react";
+import Colors from "./Colors/Colors";
+
 import { INote } from "../interfaces/INotes";
 import randomId from "../utils/randomId";
 import NoteHeader from "./NotesHeader/NotesHeader";
-import NoteSelected from "./NotesSelected/NotesSelected";
+import NoteList from "./NotesList/NotesList";
+import Note from "./Note/Note";
 import ManipulateLocalStorage from "../utils/ManipulateLocalStorage";
 
 import "./StickyNotes.css";
@@ -93,18 +96,25 @@ const Notes = () => {
 
     return (
         <div className="StickyNotes">
-            <NoteHeader
-                notes={notes}
-                searchNote={searchNote}
-                createNote={createNote}
-                readNote={readNote}
-                deleteNote={deleteNote}
-            />
-            <NoteSelected
-                notes={notes}
-                updateNote={updateNote}
-                setNewColor={setNewColor}
-            />
+            <div className="notes">
+                <NoteHeader notes={notes}
+                    searchNote={searchNote} createNote={createNote}
+                    readNote={readNote} deleteNote={deleteNote}
+                />
+                <Colors
+                    onClick={createNote}
+                />
+                <NoteList notes={notes}
+                    deleteNote={deleteNote}
+                    readNote={readNote}
+                />
+            </div>
+            <div className="note">
+                <Note notes={notes}
+                    updateNote={updateNote}
+                    setNewColor={setNewColor}
+                />
+            </div>
         </div >
     );
 };
