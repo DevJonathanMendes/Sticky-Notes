@@ -1,4 +1,4 @@
-import Notes from "./components/notes/Notes";
+import Notes from "./components/Notes";
 
 import "./app.css";
 

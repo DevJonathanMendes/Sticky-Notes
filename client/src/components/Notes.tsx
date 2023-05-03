@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { INote } from "../../interfaces/INotes";
-import randomId from "../../utils/randomId";
+import { INote } from "../interfaces/INotes";
+import randomId from "../utils/randomId";
 import NoteHeader from "./NotesHeader/NotesHeader";
 import NoteSelected from "./NotesSelected/NotesSelected";
-import ManipulateLocalStorage from "../../utils/ManipulateLocalStorage";
+import ManipulateLocalStorage from "../utils/ManipulateLocalStorage";
 
 import "./Notes.css";
 

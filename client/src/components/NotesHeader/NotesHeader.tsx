@@ -1,5 +1,5 @@
-import { IPropsNoteHeader } from "../../../interfaces/INotes";
-import Colors from "../../Colors/Colors";
+import { IPropsNoteHeader } from "../../interfaces/INotes";
+import Colors from "../Colors/Colors";
 import NoteList from "../NotesList/NotesList";
 
 import "./NotesHeader.css";
