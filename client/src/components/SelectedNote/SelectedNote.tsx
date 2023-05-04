@@ -17,10 +17,12 @@ const NoteSelected: ISelectedNote = (props) => {
                     onClick={props.setNewColor}
                 />
             </div>
-            <textarea onChange={handleChange}
-                placeholder="Write a note..."
-                value={note.text}
-            />
+            <div className="container-textarea">
+                <textarea onChange={handleChange}
+                    placeholder="Write a note..."
+                    value={note.text}
+                />
+            </div>
         </div> : <></>;
 };
 
