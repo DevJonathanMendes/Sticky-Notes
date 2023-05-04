@@ -51,7 +51,7 @@ export default function StickyNotes(): JSX.Element {
     };
 
     const updateNote = (id: string, text: string) => {
-        if (text.length < 256) {
+        if (text.length < 1024) {
             setNotes(notes => notes.map(note => {
                 if (note.id === id) {
                     note.date = new Date().toISOString();
