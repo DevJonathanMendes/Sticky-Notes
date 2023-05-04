@@ -3,6 +3,5 @@ export type INote = {
     text: string,
     date: string,
     color: string,
-    selected: true | false,
-    search: true | false
+    selected: true | false
 };
