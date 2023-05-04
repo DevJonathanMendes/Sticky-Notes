@@ -9,15 +9,16 @@
 }
 
 .container-notes {
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-black);
     min-width: 320px;
     max-width: 320px;
-    margin: 10px 10px 0 10px;
-    display: flex;
-    flex-direction: column;
+    padding: 10px 10px 0 10px;
 }
 
 .container-note {
-    width: 100%;
+    margin: auto;
+    padding: 10px;
     overflow: auto;
 }

@@ -1,6 +1,6 @@
 .icons-color {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .icons-color button {
