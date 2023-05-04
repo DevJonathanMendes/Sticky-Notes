@@ -1,9 +1,9 @@
 import { INote } from "./INotes";
 
-interface IColors {
+interface props {
     style?: string,
     note?: INote,
     onClick: (color: string, id?: string) => void
 };
 
-export type { IColors };
+export type IColors = (props: props) => JSX.Element;

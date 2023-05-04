@@ -1,18 +1,19 @@
-.notes-list {
+.list-notes {
     overflow: auto;
+    margin-top: 10px;
 }
 
-.notes-list li,
-.notes-list div,
-.notes-list button {
+.list-notes li,
+.list-notes div,
+.list-notes button {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.notes-list li {
+.list-notes li {
     background-color: var(--color-dark);
-    margin: 8px;
+    margin: 0 8px 8px 8px;
     border-top: 4px solid;
     border-radius: 4px;
 }
@@ -21,12 +22,12 @@
     background-color: var(--color-dark-hover) !important;
 }
 
-.notes-list li:hover {
+.list-notes li:hover {
     background-color: var(--color-dark-hover);
     cursor: pointer;
 }
 
-.notes-list div {
+.list-notes div {
     flex-direction: column;
     flex-grow: 1;
     padding: 0px 0px 6px 8px;
@@ -35,10 +36,11 @@
 .note-date {
     align-self: flex-start;
     font-size: 12px;
+    margin: 2px;
     padding: 4px 0 2px 0 !important;
 }
 
-.notes-list p {
+.list-notes p {
     align-self: start;
     overflow: hidden;
     word-break: break-all;
@@ -47,7 +49,7 @@
     max-height: calc(19px*4);
 }
 
-.notes-list button {
+.list-notes button {
     background-color: unset;
     min-width: 34px;
     min-height: 34px;
@@ -55,7 +57,7 @@
     padding: 4px;
 }
 
-.notes-list button svg:hover {
+.list-notes button svg:hover {
     fill: #919191;
     cursor: pointer;
 }

@@ -2,21 +2,26 @@ header {
     display: flex;
     flex-direction: column;
 }
-header input[type=search] {
+
+header>h1,
+header>input {
+    margin-bottom: 10px;
+}
+
+header>input[type=search] {
     background-color: var(--color-dark);
     color: #fff;
 
-    margin: 4px 10px;
     border: none;
     border-radius: 2px;
-    padding: 8px 4px 8px 12px;
+    padding: 10px 4px 8px 12px;
     outline: none;
 }
 
-header input[type=search]:hover {
+header>input[type=search]:hover {
     background-color: var(--color-dark-hover);
 }
 
-header input[type=search]:focus {
+header>input[type=search]:focus {
     background-color: var(--color-dark);
 }

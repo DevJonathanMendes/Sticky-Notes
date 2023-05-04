@@ -1,29 +1,27 @@
-import { IPropsNoteSelected } from "../../interfaces/INotes";
+import { ISelectedNote } from "../../interfaces/ISelectedNote";
 import Colors from "../Colors/Colors";
 
-import "./Note.css";
+import "./SelectedNote.css";
 
-const NoteSelected = (props: IPropsNoteSelected) => {
+const NoteSelected: ISelectedNote = (props) => {
     const note = props.notes.filter(note => note.selected)[0];
 
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
         props.updateNote(note.id, e.target.value);
 
     return note ?
-        <div>
+        <div className="note">
             <div className={`container-colors ${note.color}`}>
-                <Colors
-                    style="note-colors"
+                <Colors style="note-colors"
                     note={note}
                     onClick={props.setNewColor}
                 />
             </div>
-            <textarea
-                onChange={handleChange}
+            <textarea onChange={handleChange}
                 placeholder="Write a note..."
                 value={note.text}
             />
-        </div> : null;
+        </div> : <></>;
 };
 
 export default NoteSelected;

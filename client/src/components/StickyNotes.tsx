@@ -1,18 +1,17 @@
-import { useState } from "react";
-import Colors from "./Colors/Colors";
-
 import { INote } from "../interfaces/INotes";
-import randomId from "../utils/randomId";
-import NoteHeader from "./NotesHeader/NotesHeader";
-import NoteList from "./NotesList/NotesList";
-import Note from "./Note/Note";
 import ManipulateLocalStorage from "../utils/ManipulateLocalStorage";
+import { useState } from "react";
+import randomId from "../utils/randomId";
+import SearchNote from "./SearchNote/SearchNote";
+import Colors from "./Colors/Colors";
+import ListNotes from "./ListNotes/ListNotes";
+import SelectedNote from "./SelectedNote/SelectedNote";
 
 import "./StickyNotes.css";
 
 const localStorageNotes = new ManipulateLocalStorage("notes");
 
-const Notes = () => {
+export default function StickyNotes(): JSX.Element {
     const [notes, setNotes] = useState<INote[]>(localStorageNotes.readItem());
 
     const searchNote = (searchText: string) => {
@@ -96,21 +95,13 @@ const Notes = () => {
 
     return (
         <div className="StickyNotes">
-            <div className="notes">
-                <NoteHeader notes={notes}
-                    searchNote={searchNote} createNote={createNote}
-                    readNote={readNote} deleteNote={deleteNote}
-                />
-                <Colors
-                    onClick={createNote}
-                />
-                <NoteList notes={notes}
-                    deleteNote={deleteNote}
-                    readNote={readNote}
-                />
+            <div className="container-notes">
+                <SearchNote searchNote={searchNote} />
+                <Colors onClick={createNote} />
+                <ListNotes notes={notes} deleteNote={deleteNote} readNote={readNote} />
             </div>
-            <div className="note">
-                <Note notes={notes}
+            <div className="container-note">
+                <SelectedNote notes={notes}
                     updateNote={updateNote}
                     setNewColor={setNewColor}
                 />
@@ -119,4 +110,3 @@ const Notes = () => {
     );
 };
 
-export default Notes;
