@@ -1,5 +1,6 @@
 .list-notes {
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     margin-top: 10px;
 }
 
@@ -30,7 +31,8 @@
 .list-notes div {
     flex-direction: column;
     flex-grow: 1;
-    padding: 0px 0px 6px 8px;
+    padding: 0px 0px 8px 8px;
+    overflow: hidden;
 }
 
 .note-date {
@@ -41,12 +43,10 @@
 }
 
 .list-notes p {
+    font-size: 1rem;
     align-self: start;
     overflow: hidden;
-    word-break: break-all;
-    word-wrap: break-word;
-    min-height: calc(19px*2);
-    max-height: calc(19px*4);
+    max-height: calc(1.1rem*5);
 }
 
 .list-notes button {
