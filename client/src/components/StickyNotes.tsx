@@ -15,15 +15,12 @@ export default function StickyNotes(): JSX.Element {
     const [notes, setNotes] = useState<INote[]>(localStorageNotes.readItem());
 
     const searchNote = (searchText: string) => {
-        setNotes(notes => notes.map(note => {
+        setNotes(localStorageNotes.readItem().filter((note: INote) => {
             const text = note.text.toLowerCase();
             searchText = searchText.toLowerCase();
 
-            text.indexOf(searchText) === -1
-                ? note.search = false
-                : note.search = true;
-
-            return note;
+            if (text.indexOf(searchText) !== -1)
+                return note;
         }));
     };
 
@@ -33,8 +30,7 @@ export default function StickyNotes(): JSX.Element {
             color: color,
             text: "",
             date: new Date().toISOString(),
-            selected: true,
-            search: true
+            selected: true
         };
 
         localStorageNotes.createItem(newNote);
