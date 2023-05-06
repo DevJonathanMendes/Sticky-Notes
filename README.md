@@ -1,6 +1,10 @@
 # Sticky Notes
 Web App de Notas Autoadesivas.
 
+## 🖼️ Screenshots
+![alt](https://github.com/DevJonathanMendes/notes-and-todolist/master/images/1.PNG)
+![alt](https://github.com/DevJonathanMendes/notes-and-todolist/master/images/2.PNG)
+
 ## 🚀 Começando
 ### 📋 Pré-requisitos
 - [Node.JS](https://nodejs.org/pt-br/) - Ambiente de execução JavaScript.
@@ -9,9 +13,9 @@ Web App de Notas Autoadesivas.
 Comando|Descrição                               
 :-|:-
 `yarn install-client`|Baixa as dependências (**Obrigatório**).
-`yarn dev`|Iniciar em modo de desenvolvimento.
-`yarn preview`|pré visualização.
-`yarn build`|cria uma distribuição.
+`yarn dev`|Inicia em modo de desenvolvimento.
+`yarn build`|Cria uma distribuição.
+`yarn preview`|Visualiza uma distribuição.
 
 ## 🛠️ Construído com
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) - Linguagem de programação.
