@@ -2,8 +2,8 @@
 Web App de Notas Autoadesivas.
 
 ## 🖼️ Screenshots
-![alt](https://raw.github.com/DevJonathanMendes/notes-and-todolist/master/images/1.png)
-![alt](https://raw.github.com/DevJonathanMendes/notes-and-todolist/master/images/2.png)
+![alt](https://raw.github.com/DevJonathanMendes/sticky-notes/master/images/1.png)
+![alt](https://raw.github.com/DevJonathanMendes/sticky-notes/master/images/2.png)
 
 ## 🚀 Começando
 ### 📋 Pré-requisitos
