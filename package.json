@@ -1,7 +1,7 @@
 {
-  "name": "Sticky_Notes",
+  "name": "Sticky-Notes",
   "version": "1.0.0",
-  "repository": "https://github.com/DevJonathanMendes/notes-and-todolist.git",
+  "repository": "https://github.com/DevJonathanMendes/Sticky-Notes.git",
   "author": "DevJonathanMendes <jonathanbarreiro88@gmail.com>",
   "license": "MIT",
   "scripts": {
