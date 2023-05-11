@@ -10,10 +10,11 @@ const NoteSelected: ISelectedNote = (props) => {
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
         props.updateNote(note.id, e.target.value);
 
-    const textareaRef = useRef(null);
+    const ref = useRef<HTMLTextAreaElement>(null);
 
     useEffect(() => {
-        note && textareaRef.current.focus();
+        if (ref.current)
+            ref.current.focus();
     });
 
     return note ?
@@ -26,7 +27,7 @@ const NoteSelected: ISelectedNote = (props) => {
             </div>
             <div className="container-textarea">
                 <textarea onChange={handleChange}
-                    ref={textareaRef}
+                    ref={ref}
                     placeholder="Write a note..."
                     value={note.text}
                 />
