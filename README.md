@@ -28,4 +28,4 @@ Comando|Descrição
 - **Jonathan Mendes** - [GitHub](https://github.com/DevJonathanMendes)
 
 ## 📄 Licença
-Este projeto está sob a licença MIT - Veja o arquivo [LICENSE.md](https://github.com/DevJonathanMendes/sticky-notes/master/LICENSE) para detalhes.
+Este projeto está sob a licença MIT - Veja o arquivo [LICENSE.md](https://github.com/DevJonathanMendes/sticky-notes/blob/master/README.md) para detalhes.
