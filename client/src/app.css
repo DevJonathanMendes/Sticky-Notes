@@ -1,5 +1,5 @@
 :root {
-    --color-black: #000020;
+    --color-background: #000020;
     --color-dark: #303040;
     --color-dark-hover: #303060;
     --color-yellow: #FFCB47;
@@ -18,7 +18,7 @@
 
 body {
     display: flex;
-    background-color: var(--color-black);
+    background-color: var(--color-background);
     min-width: 720px;
     min-height: 100vh;
 

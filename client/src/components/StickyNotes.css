@@ -1,5 +1,5 @@
 .StickyNotes {
-    background-color: var(--color-black);
+    background-color: var(--color-background);
     min-height: 100vh;
     max-height: 100vh;
     margin: 0;
@@ -11,7 +11,7 @@
 .container-notes {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-black);
+    background-color: var(--color-background);
     min-width: 320px;
     max-width: 320px;
     padding: 10px 10px 0 10px;
