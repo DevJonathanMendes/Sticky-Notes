@@ -13,9 +13,9 @@ const NoteSelected: ISelectedNote = (props) => {
     const ref = useRef<HTMLTextAreaElement>(null);
 
     useEffect(() => {
-        if (ref.current)
+        if (ref.current && note.selected)
             ref.current.focus();
-    });
+    }, [note]);
 
     return note ?
         <div className="note">

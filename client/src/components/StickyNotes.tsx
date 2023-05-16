@@ -18,6 +18,7 @@ export default function StickyNotes(): JSX.Element {
         setNotes(localStorageNotes.readItem().filter((note: INote) => {
             const text = note.text.toLowerCase();
             searchText = searchText.toLowerCase();
+            note.selected = false;
 
             if (text.indexOf(searchText) !== -1)
                 return note;
