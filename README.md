@@ -1,12 +1,16 @@
-# Sticky Notes
+# Sticky Notes 🗒️
 Web App de Notas Autoadesivas.
+
+## ⚠️ Atenção
+Não houve um planejamento de programação neste projeto.\
+Iniciei com um MVP, partindo para polimentos com um pouco de princípios S.O.L.I.D.
 
 ## ⚙️ Aplicação
 [![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://here-sticky-notes.netlify.app/)
 
 ## 🖼️ Screenshots
-![alt](https://raw.github.com/DevJonathanMendes/sticky-notes/master/images/1.png)\
-![alt](https://raw.github.com/DevJonathanMendes/sticky-notes/master/images/2.png)
+<img src="https://raw.github.com/DevJonathanMendes/sticky-notes/master/images/1.png" width="60%"/>\
+<img src="https://raw.github.com/DevJonathanMendes/sticky-notes/master/images/2.png" width="60%"/>
 
 ## 🚀 Começando
 ### 📋 Pré-requisitos
